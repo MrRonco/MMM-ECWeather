@@ -1,0 +1,165 @@
+/**
+ * MMM-ECWeather — Default Styles
+ *
+ * Minimal base styling. Designed to be overridden by custom.css
+ * for site-specific layouts (e.g., the 3-column editorial design).
+ */
+
+/* Module wrapper */
+.ecweather {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ─── Current Conditions ─── */
+.ecw-current {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+/* Weather icon */
+.ecw-icon {
+  margin-bottom: 6px;
+}
+
+.ecw-icon-img {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+
+.ecw-icon .fas {
+  font-size: 40px;
+  opacity: 0.7;
+}
+
+/* Temperature */
+.ecw-temp {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+/* Condition text */
+.ecw-condition {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.55;
+  margin-bottom: 10px;
+}
+
+/* Stats rows */
+.ecw-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ecw-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.45;
+}
+
+.ecw-stat-label {
+  opacity: 1;
+}
+
+.ecw-stat-value {
+  opacity: 1;
+}
+
+/* ─── Forecast ─── */
+.ecw-forecast {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ecw-forecast-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ecw-forecast-day:last-child {
+  border-bottom: none;
+}
+
+.ecw-fc-name {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.5;
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.ecw-fc-icon {
+  flex-shrink: 0;
+  width: 30px;
+  text-align: center;
+}
+
+.ecw-fc-icon-img {
+  width: 24px;
+  height: auto;
+}
+
+.ecw-fc-icon .fas {
+  font-size: 16px;
+  opacity: 0.4;
+}
+
+.ecw-fc-temps {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.ecw-fc-high {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ecw-fc-low {
+  font-size: 12px;
+  opacity: 0.38;
+}
+
+.ecw-fc-condition {
+  font-size: 11px;
+  opacity: 0.4;
+  margin-left: 8px;
+  flex-shrink: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+/* ─── States ─── */
+.ecw-loading {
+  font-size: 14px;
+  opacity: 0.4;
+  padding: 20px 0;
+}
+
+.ecw-error {
+  font-size: 13px;
+  color: rgba(240, 100, 80, 0.8);
+  padding: 10px 0;
+}
+
+.ecw-error .fas {
+  margin-right: 6px;
+}

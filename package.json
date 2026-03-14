@@ -1,0 +1,22 @@
+{
+  "name": "mmm-ecweather",
+  "version": "1.0.0",
+  "description": "MagicMirror² module for Environment Canada weather data. Displays current conditions and multi-day forecast using the free, keyless api.weather.gc.ca API.",
+  "keywords": [
+    "MagicMirror",
+    "weather",
+    "Canada",
+    "Environment Canada",
+    "forecast",
+    "module"
+  ],
+  "author": "Franco Raso",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrRonco/MMM-ECWeather"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
