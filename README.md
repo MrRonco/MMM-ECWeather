@@ -21,6 +21,8 @@ A [MagicMirror²](https://magicmirror.builders/) module that displays weather da
 
 ![MMM-ECWeather 3-column layout](screenshots/ecweather-3col.png)
 
+> **Note:** The clock in the center is MagicMirror's built-in `clock` module (no install needed). The 3-column layout uses two instances of MMM-ECWeather plus the clock — see [config.sample.js](config.sample.js) for the complete setup.
+
 ## Installation
 
 1. Navigate to your MagicMirror modules folder:
