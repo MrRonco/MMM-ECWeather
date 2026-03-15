@@ -17,7 +17,9 @@ A [MagicMirror²](https://magicmirror.builders/) module that displays weather da
 
 ## Screenshot
 
-*Coming soon*
+3-column layout: Current Conditions | Clock | 6-Day Forecast
+
+![MMM-ECWeather 3-column layout](screenshots/ecweather-3col.png)
 
 ## Installation
 
