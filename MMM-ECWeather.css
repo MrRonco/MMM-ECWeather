@@ -9,6 +9,7 @@
 .ecweather {
   font-family: inherit;
   color: inherit;
+  opacity: var(--ecw-opacity, 1);
 }
 
 /* Module header — styled as section label */
@@ -61,7 +62,7 @@
 .ecw-condition {
   font-size: 14px;
   font-weight: 400;
-  opacity: 0.55;
+  opacity: var(--ecw-dimmed, 0.55);
   margin-bottom: 10px;
 }
 
@@ -78,7 +79,7 @@
   gap: 0;
   font-size: 13px;
   font-weight: 400;
-  opacity: 0.45;
+  opacity: var(--ecw-dimmed, 0.45);
 }
 
 .ecw-stat-label {
@@ -116,7 +117,7 @@
 .ecw-fc-name {
   font-size: 13px;
   font-weight: 500;
-  opacity: 0.5;
+  opacity: var(--ecw-dimmed, 0.5);
   width: 40px;
   flex-shrink: 0;
 }
@@ -151,12 +152,12 @@
 
 .ecw-fc-low {
   font-size: 12px;
-  opacity: 0.38;
+  opacity: var(--ecw-dimmed, 0.38);
 }
 
 .ecw-fc-condition {
   font-size: 11px;
-  opacity: 0.4;
+  opacity: var(--ecw-dimmed, 0.4);
   margin-left: 8px;
   flex-shrink: 1;
   overflow: hidden;

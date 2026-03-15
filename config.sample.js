@@ -1,7 +1,7 @@
 /* ================================================================
    MMM-ECWeather — Sample Configuration
 
-   Add this block to the modules array in your
+   Add these blocks to the modules array in your
    ~/MagicMirror/config/config.js file.
 
    See README.md for full configuration options and
@@ -41,15 +41,21 @@
     showForecastDays: 5,           // Number of forecast days, max 6 (default)
     showForecastCondition: false,  // Show condition text per forecast day (default: off)
     tempUnit: "\u00b0",            // Temperature unit suffix (default: \u00b0)
-    iconStyle: "ec"                // "ec" = EC icons, "fa" = Font Awesome (default: ec)
+    iconStyle: "ec",               // "ec" = EC icons, "fa" = Font Awesome (default: ec)
+    opacity: 1,                    // Overall module opacity, 0\u20131 (default)
+    dimmedOpacity: 0.45            // Opacity for secondary text: stats, labels, 0\u20131 (default)
   }
 },
 */
 
-// --- Two-instance setup: current + forecast in separate regions ---
+// --- 3-Column Layout: Current | Clock | Forecast ---
+//
+// A popular dashboard layout with current conditions on the left,
+// MagicMirror\u00b2's built-in clock in the center, and the multi-day
+// forecast on the right.
 
 /*
-// Left column — Current Conditions
+// Left — Current Conditions
 {
   module: "MMM-ECWeather",
   position: "top_left",
@@ -61,36 +67,56 @@
     showCondition: true,
     showFeelsLike: true,
     showWind: true,
-    showHumidity: true
+    showHumidity: true,
+    iconStyle: "fa",
+    opacity: 1,
+    dimmedOpacity: 0.45
   }
 },
 
-// Right column — 5-Day Forecast
+// Center — Clock (MagicMirror\u00b2 built-in module)
+{
+  module: "clock",
+  position: "top_center",
+  config: {
+    displayType: "digital",
+    timeFormat: 12,
+    showPeriod: false,
+    showDate: true,
+    dateFormat: "dddd, MMMM D, YYYY",
+    displaySeconds: false,
+    clockBold: false
+  }
+},
+
+// Right — Multi-Day Forecast
 {
   module: "MMM-ECWeather",
   position: "top_right",
-  header: "5-Day Forecast",
+  header: "6-Day Forecast",
   config: {
     cityId: "on-143",
     mode: "forecast",
-    showForecastDays: 5,
+    showForecastDays: 6,
     showIcon: true,
-    iconStyle: "fa"
+    iconStyle: "fa",
+    opacity: 1,
+    dimmedOpacity: 0.45
   }
 },
 */
 
 // --- Common City IDs ---
 //
-// on-143  — Toronto, ON
-// on-118  — Ottawa, ON
-// on-40   — Greater Sudbury, ON
-// qc-147  — Montreal, QC
-// bc-74   — Vancouver, BC
-// ab-52   — Calgary, AB
-// ab-50   — Edmonton, AB
-// mb-38   — Winnipeg, MB
-// ns-19   — Halifax, NS
-// nl-24   — St. John's, NL
+// on-143  \u2014 Toronto, ON
+// on-118  \u2014 Ottawa, ON
+// on-40   \u2014 Greater Sudbury, ON
+// qc-147  \u2014 Montreal, QC
+// bc-74   \u2014 Vancouver, BC
+// ab-52   \u2014 Calgary, AB
+// ab-50   \u2014 Edmonton, AB
+// mb-38   \u2014 Winnipeg, MB
+// ns-19   \u2014 Halifax, NS
+// nl-24   \u2014 St. John\u2019s, NL
 //
 // Find yours: https://api.weather.gc.ca/collections/citypageweather-realtime/items?f=json&lang=en

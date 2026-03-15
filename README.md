@@ -92,13 +92,15 @@ Add the module to your `config/config.js`. A complete sample configuration file 
 | `showForecastCondition` | `false` | Show condition text per forecast day |
 | `tempUnit` | `"°"` | Temperature unit suffix |
 | `iconStyle` | `"ec"` | `"ec"` for Environment Canada icons, `"fa"` for Font Awesome |
+| `opacity` | `1` | Overall module opacity (`0`–`1`). Reduce to blend into the background. |
+| `dimmedOpacity` | `0.45` | Opacity for secondary text — stats, labels, forecast day names (`0`–`1`). Set to `1` for full brightness. |
 
-### Two-Instance Setup (Current + Forecast)
+### 3-Column Layout (Current | Clock | Forecast)
 
-Use two instances to display current conditions and forecast in separate regions:
+A popular dashboard layout with current conditions on the left, the built-in clock in the center, and the multi-day forecast on the right:
 
 ```javascript
-// Left column — Current Conditions
+// Left — Current Conditions
 {
     module: "MMM-ECWeather",
     position: "top_left",
@@ -111,20 +113,36 @@ Use two instances to display current conditions and forecast in separate regions
         showFeelsLike: true,
         showWind: true,
         showHumidity: true,
+        iconStyle: "fa"
     }
 },
 
-// Right column — 5-Day Forecast
+// Center — Clock (MagicMirror² built-in module)
+{
+    module: "clock",
+    position: "top_center",
+    config: {
+        displayType: "digital",
+        timeFormat: 12,
+        showPeriod: false,
+        showDate: true,
+        dateFormat: "dddd, MMMM D, YYYY",
+        displaySeconds: false,
+        clockBold: false
+    }
+},
+
+// Right — Multi-Day Forecast
 {
     module: "MMM-ECWeather",
     position: "top_right",
-    header: "5-Day Forecast",
+    header: "6-Day Forecast",
     config: {
         cityId: "on-143",
         mode: "forecast",
-        showForecastDays: 5,
+        showForecastDays: 6,
         showIcon: true,
-        iconStyle: "fa",
+        iconStyle: "fa"
     }
 },
 ```

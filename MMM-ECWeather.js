@@ -28,6 +28,8 @@ Module.register("MMM-ECWeather", {
     showForecastCondition: false, // Show condition text per forecast day
     tempUnit: "°",                // Temperature unit suffix
     iconStyle: "ec",              // "ec" = Environment Canada icons, "fa" = Font Awesome
+    opacity: 1,                   // Overall module opacity (0–1)
+    dimmedOpacity: 0.45,          // Opacity for secondary text: stats, labels (0–1)
   },
 
   weatherData: null,
@@ -83,6 +85,10 @@ Module.register("MMM-ECWeather", {
   getDom: function () {
     var wrapper = document.createElement("div");
     wrapper.className = "ecweather";
+
+    // Apply configurable opacity via CSS custom properties
+    wrapper.style.setProperty("--ecw-opacity", this.config.opacity);
+    wrapper.style.setProperty("--ecw-dimmed", this.config.dimmedOpacity);
 
     if (this.weatherError) {
       wrapper.innerHTML =
