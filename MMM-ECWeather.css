@@ -2,13 +2,26 @@
  * MMM-ECWeather — Default Styles
  *
  * Minimal base styling. Designed to be overridden by custom.css
- * for site-specific layouts (e.g., the 3-column editorial design).
+ * for site-specific layouts.
  */
 
 /* Module wrapper */
 .ecweather {
   font-family: inherit;
   color: inherit;
+}
+
+/* Module header — styled as section label */
+.MMM-ECWeather .module-header {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.30);
+  margin-bottom: 14px;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 /* ─── Current Conditions ─── */
@@ -62,7 +75,7 @@
 .ecw-stat-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0;
   font-size: 13px;
   font-weight: 400;
   opacity: 0.45;
@@ -70,6 +83,11 @@
 
 .ecw-stat-label {
   opacity: 1;
+}
+
+.ecw-stat-label::after {
+  content: ' ';
+  white-space: pre;
 }
 
 .ecw-stat-value {

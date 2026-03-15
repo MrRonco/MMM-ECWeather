@@ -13,7 +13,7 @@
 
 Module.register("MMM-ECWeather", {
   defaults: {
-    cityId: "on-40",              // Environment Canada city identifier (default: Greater Sudbury)
+    cityId: "on-143",             // Environment Canada city identifier (default: Toronto)
     lang: "en",                   // Language: "en" or "fr"
     updateInterval: 10 * 60 * 1000, // Update every 10 minutes (no rate limits)
     animationSpeed: 1000,         // DOM update animation speed in ms

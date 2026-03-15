@@ -60,7 +60,7 @@ To find your city:
 
 ## Configuration
 
-Add the module to your `config/config.js`:
+Add the module to your `config/config.js`. A complete sample configuration file is also available at [`config.sample.js`](config.sample.js).
 
 ```javascript
 {
@@ -68,7 +68,7 @@ Add the module to your `config/config.js`:
     position: "top_left",      // or any MagicMirror region
     header: "Current Conditions",
     config: {
-        cityId: "on-40",       // Your EC city identifier
+        cityId: "on-143"       // Your EC city identifier
     }
 }
 ```
@@ -77,7 +77,7 @@ Add the module to your `config/config.js`:
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `cityId` | `"on-40"` | Environment Canada city identifier |
+| `cityId` | `"on-143"` | Environment Canada city identifier |
 | `lang` | `"en"` | Language: `"en"` or `"fr"` |
 | `updateInterval` | `600000` | Update interval in ms (default: 10 minutes) |
 | `animationSpeed` | `1000` | DOM update animation speed in ms |
@@ -104,7 +104,7 @@ Use two instances to display current conditions and forecast in separate regions
     position: "top_left",
     header: "Current Conditions",
     config: {
-        cityId: "on-40",
+        cityId: "on-143",
         mode: "current",
         showIcon: true,
         showCondition: true,
@@ -120,7 +120,7 @@ Use two instances to display current conditions and forecast in separate regions
     position: "top_right",
     header: "5-Day Forecast",
     config: {
-        cityId: "on-40",
+        cityId: "on-143",
         mode: "forecast",
         showForecastDays: 5,
         showIcon: true,
@@ -189,3 +189,4 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 - Weather data provided by [Environment Canada](https://weather.gc.ca/) via the [GeoMet API](https://api.weather.gc.ca/)
 - Built for the [MagicMirror²](https://magicmirror.builders/) platform
+- Developed with the assistance of [Claude Code](https://claude.ai/claude-code) by Anthropic
