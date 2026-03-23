@@ -77,6 +77,13 @@ Module.register("MMM-ECWeather", {
     }
 
     if (notification === "EC_WEATHER_ERROR") {
+      Log.warn("[MMM-ECWeather] Fetch error: " + payload.error);
+      // If we already have weather data, keep showing it instead of an error
+      if (this.weatherData) {
+        // Silently ignore — stale data is better than an error screen
+        return;
+      }
+      // Only show error if we've never successfully loaded data
       this.weatherError = payload.error;
       this.updateDom(this.config.animationSpeed);
     }
